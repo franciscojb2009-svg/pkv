@@ -437,7 +437,8 @@
     form.querySelector(".principal").classList.add("cargando");
     setTimeout(function () {
       document.getElementById("pako").classList.add("salida");
-      setTimeout(function () { window.location = "index.html"; }, 420);
+      var ir = new URLSearchParams(location.search).get("ir");
+      setTimeout(function () { window.location = (ir === "index.html" || ir === "cafeteria.html") ? ir : "cafeteria.html"; }, 420);
     }, 500);
   }
 
